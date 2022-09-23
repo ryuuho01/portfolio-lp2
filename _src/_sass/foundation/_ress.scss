@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+body::-webkit-scrollbar,
+.l-humburger__nav-lists--left::-webkit-scrollbar,
+.l-humburger__nav-lists--right::-webkit-scrollbar{
+    display:none;
+}
+body,
+.l-humburger__nav-lists--left::-webkit-scrollbar,
+.l-humburger__nav-lists--right::-webkit-scrollbar{
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #000;
+}
+*:focus {
+    outline: none;
+}

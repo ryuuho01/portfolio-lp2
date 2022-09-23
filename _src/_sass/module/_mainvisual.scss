@@ -1,0 +1,1097 @@
+@use '../global/setting/font-family' as font;
+@use '../global/mixin/function' as function;
+@use '../global/mixin/breakpoint' as bp;
+
+.switch-sp {
+  display: none;
+  @media screen and (max-width : bp.$pc) {
+    display: block;
+  }
+}
+.switch-pc {
+  @media screen and (max-width : bp.$pc) {
+    display: none;
+  }
+}
+body {
+  background-color: rgb(255, 255, 255);
+  width: 1000px;
+  margin: auto;
+  @media screen and (max-width : bp.$pc) {
+    width: 100%;
+  }
+}
+.flame {
+  position: relative;
+  height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  @media screen and (max-width : bp.$pc) {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+.liner-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15px;
+  height: 13000px;
+  background: linear-gradient(rgb(255, 188, 188), white);
+}
+.liner-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15px;
+  height: 13000px;
+  background: linear-gradient(rgb(255, 188, 188), white);
+}
+.first-catch {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding-top: 20px;
+  &__comment {
+    width: 330px;
+    img {
+      width: 100%;
+    }
+  }
+  &__meeting {
+    width: 330px;
+    img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50px;
+    }
+  }
+}
+.first-message {
+  text-align: center;
+  font-weight: 800;
+  &__line1 {
+    font-size: 25px;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(20px, function.vw(25px, bp.$pc), 25px);
+      margin-top: 30px;
+    }
+  }
+  &__line2 {
+    font-size: 40px;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(30px, function.vw(40px, bp.$pc), 40px);
+    }
+    .earn {
+      font-size: 50px;
+      color: red;
+      text-shadow: 6px 6px 4px rgb(189, 189, 189);
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(40px, function.vw(50px, bp.$pc), 50px);
+      }
+    }
+  }
+  &__line3 {
+    font-size: 25px;
+    position: relative;
+    margin-top: 10px;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(18px, function.vw(25px, bp.$pc), 25px);
+      padding-left: 30px;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 30px;
+    }
+  }
+  &__line3::before {
+    position: absolute;
+    top: -20px;
+    left: 65px;
+    content: '';
+    background-image: url('../img/pc/dollar-icon.png');
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    transform: rotate(-25deg);
+    z-index: -1;
+    @media screen and (max-width : bp.$pc) {
+      top: -20px;
+      left: 0px;
+    }
+  }
+  &__line4 {
+    position: relative;
+    .text {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      font-size: 60px;
+      display: inline-block;
+      background: linear-gradient(yellow 20%, #ff5e00);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(34px, function.vw(60px, bp.$pc), 60px);
+      }
+    }
+    .shadow {
+      display: inline-block;
+      font-size: 60px;
+      text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0),
+        -1px 1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0),
+        0px 1px 0 rgb(0, 0, 0), 0-1px 0 rgb(0, 0, 0),
+        -1px 0 0 rgb(0, 0, 0), 1px 0 0 rgb(0, 0, 0);
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(34px, function.vw(60px, bp.$pc), 60px);
+      }
+    }
+  }
+  &__line5 {
+    font-size: 60px;
+    color: rgb(0, 189, 0);
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(45px, function.vw(60px, bp.$pc), 60px);
+    }
+    .inline-block {
+      display: inline-block;
+      width: 58px;
+      margin-left: 10px;
+      margin-right: 10px;
+      img {
+        width: 100%;
+      }
+    }
+    .black {
+      color: black;
+    }
+  }
+  &__line-button {
+    position: relative;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 410px;
+    background-color:rgb(0, 189, 0);
+    color: white;
+    font-size: 35px;
+    border: 1px solid black;
+    border-radius: 42px;
+    height: 100px;
+    padding-top: 5px;
+    box-shadow: 8px 8px 5px rgb(173, 173, 173);
+    @media screen and (max-width : bp.$pc) {
+      width: 70%;
+      max-width: 300px;
+      font-size: clamp(20px, function.vw(25px, bp.$pc), 25px);
+      height: 65px;
+    }
+    p {
+      height: 38px;
+      @media screen and (max-width : bp.$pc) {
+        height: 25px;
+      }
+  }
+    i {
+      font-size: 50px;
+      transform: rotate(-15deg);
+      position: absolute;
+      top: 65px;
+      right: 50px;
+      color: black;
+      @media screen and (max-width : bp.$pc) {
+        top: 45px;
+        font-size: 30px;
+      }
+    }
+  }
+  &__line-button:hover {
+    box-shadow: 5px 5px 5px black inset;
+    color: black;
+    cursor: pointer;
+  }
+  &__present {
+    background: url(../img/pc/bible.png) no-repeat;
+    width: 80%;
+    height: 505px;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    @media screen and (max-width : bp.$pc) {
+      width: 100%;
+      // height: auto;
+      height: clamp(220px, function.vw(500px, bp.$pc), 500px);
+      background-size: contain;
+      background-position: center;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  &__line6 {
+    position: relative;
+    .text {
+      padding-top: 70px;
+      color: red;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      font-size: 50px;
+      display: inline-block;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(25px, function.vw(50px, bp.$pc), 50px);
+        padding-top: clamp(20px, function.vw(35px, bp.$pc), 35px);
+      }
+    }
+    .shadow {
+      padding-top: 70px;
+      display: inline-block;
+      font-size: 50px;
+      text-shadow: 2px 2px 0 rgb(255, 255, 255), -2px -2px 0 rgb(255, 255, 255),
+        -2px 2px 0 rgb(255, 255, 255), 2px -2px 0 rgb(255, 255, 255),
+        0px 2px 0 rgb(255, 255, 255), 0-2px 0 rgb(255, 255, 255),
+        -2px 0 0 rgb(255, 255, 255), 2px 0 0 rgb(255, 255, 255);
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(25px, function.vw(50px, bp.$pc), 50px);
+        padding-top: clamp(20px, function.vw(35px, bp.$pc), 35px);
+      }
+    }
+  }
+  &__line4-2 {
+    position: relative;
+    .text {
+      position: absolute;
+      line-height: 70px;
+      top: 0px;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      font-size: 60px;
+      display: inline-block;
+      background: linear-gradient(yellow 20%, #ff5e00);
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(28px, function.vw(60px, bp.$pc), 60px);
+        line-height: clamp(40px, function.vw(80px, bp.$pc), 80px);
+      }
+    }
+    .shadow {
+      line-height: 70px;
+      display: inline-block;
+      font-size: 60px;
+      text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0),
+        -1px 1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0),
+        0px 1px 0 rgb(0, 0, 0), 0-1px 0 rgb(0, 0, 0),
+        -1px 0 0 rgb(0, 0, 0), 1px 0 0 rgb(0, 0, 0);
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(28px, function.vw(60px, bp.$pc), 60px);
+        line-height: clamp(40px, function.vw(80px, bp.$pc), 80px);
+      }
+    }
+  }
+  &__line1-2 {
+    font-size: 40px;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(16px, function.vw(40px, bp.$pc), 40px);
+    }
+  }
+  &__line6-2 {
+    position: relative;
+    .text {
+      // padding-top: 10px;
+      color: red;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      width: 100%;
+      font-size: 60px;
+      display: inline-block;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(30px, function.vw(70px, bp.$pc), 70px);
+      }
+    }
+    .shadow {
+      // padding-top: 10px;
+      display: inline-block;
+      font-size: 60px;
+      text-shadow: 2px 2px 0 rgb(255, 255, 255), -2px -2px 0 rgb(255, 255, 255),
+        -2px 2px 0 rgb(255, 255, 255), 2px -2px 0 rgb(255, 255, 255),
+        0px 2px 0 rgb(255, 255, 255), 0-2px 0 rgb(255, 255, 255),
+        -2px 0 0 rgb(255, 255, 255), 2px 0 0 rgb(255, 255, 255);
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(30px, function.vw(70px, bp.$pc), 70px);
+      }
+    }
+  }
+}
+.worry {
+  background: url(../img/pc/worry.png) no-repeat;
+  background-size: cover;
+  width: 900px;
+  height: 653px;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 140px;
+  @media screen and (max-width : bp.$pc) {
+    width: 100%;
+    height: clamp(220px, function.vw(653px, bp.$pc), 653px);
+    background-size: contain;
+    background-position: center;
+    margin-bottom: 70px;
+  }
+  &__title {
+    text-align: center;
+    font-size: 45px;
+    padding-top: 30px;
+    font-weight: 900;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(20px, function.vw(45px, bp.$pc), 45px);
+      padding-top: clamp(16px, function.vw(30px, bp.$pc), 30px);
+    }
+    span {
+      display: inline-block;
+      transform: rotate(180deg);
+    }
+  }
+  &__para {
+    margin-top: 50px;
+    margin-left: 50px;
+    @media screen and (max-width : bp.$pc) {
+      margin-top: clamp(20px, function.vw(50px, bp.$pc), 50px);
+      margin-left: clamp(20px, function.vw(75px, bp.$pc), 75px);
+    }
+    &--flex {
+      display: flex;
+      height: 95px;
+      @media screen and (max-width : bp.$pc) {
+        height: clamp(12px, function.vw(95px, bp.$pc), 95px);
+      }
+      &-img {
+        margin-right: 20px;
+        width: 55px;
+        @media screen and (max-width : bp.$pc) {
+          width: clamp(10px, function.vw(55px, bp.$pc), 55px);
+          margin-right: 10px;
+        }
+        img {
+          width: 100%;
+        }
+      }
+      p {
+        font-size: 38px;
+        font-weight: 900;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(16px, function.vw(38px, bp.$pc), 38px);
+        }
+      }
+    }
+  }
+}
+.section-title {
+  background: url(../img/pc/section-bg.png) no-repeat;
+  background-size: cover;
+  background-position: 0;
+  width: 100%;
+  height: 110px;
+  position: relative;
+  @media screen and (max-width : bp.$pc) {
+    height: clamp(60px, function.vw(100px, bp.$pc), 100px);
+  }
+  h2 {
+    text-align: center;
+    font-size: 65px;
+    color: yellow;
+    line-height: 110px;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(25px, function.vw(65px, bp.$pc), 65px);
+      line-height: clamp(60px, function.vw(100px, bp.$pc), 100px)
+    }
+  }
+  img {
+    display: inline-block;
+    position: absolute;
+    top: -52px;
+    left: 20px;
+    width: 100px;
+    @media screen and (max-width : bp.$pc) {
+      width: clamp(40px, function.vw(100px, bp.$pc), 100px);
+      top: clamp(-52px, function.vw(-52px, bp.$pc), -21px);
+      left: 10px;
+    }
+  }
+}
+.section1-para {
+  width: 100%;
+  &__thinking {
+    width: 100%;
+    background: url(../img/pc/frustration.png) no-repeat;
+    background-size: cover;
+    padding-bottom: 15px;
+    p {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      padding-top: 70px;
+      font-size: 33px;
+      font-weight: 800;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(14px, function.vw(33px, bp.$pc), 33px);
+        padding-top: 20px;
+      }
+      .red {
+        color: red;
+      }
+      .blue {
+        color: blue;
+      }
+      .large-black {
+        font-size: 50px;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(20px, function.vw(50px, bp.$pc), 50px);
+        }
+      }
+    }
+  }
+  &__come-upon {
+    margin-bottom: 110px;
+    p {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      padding-top: 35px;
+      font-size: 33px;
+      font-weight: 800;
+      position: relative;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(14px, function.vw(33px, bp.$pc), 33px);
+        padding-top: 20px;
+      }
+      .red {
+        color: red;
+      }
+      .large-red {
+        color: red;
+        font-size: 50px;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(20px, function.vw(50px, bp.$pc), 50px);
+        }
+      }
+    }
+    p::after {
+      position: absolute;
+      bottom: -40px;
+      right: -60px;
+      content: '';
+      background-image: url('../img/pc/dollar-icon.png');
+      background-size: cover;
+      height: 110px;
+      width: 110px;
+      transform: rotate(25deg);
+      @media screen and (max-width : bp.$pc) {
+        height: clamp(50px, function.vw(110px, bp.$pc), 110px);
+        width: clamp(50px, function.vw(110px, bp.$pc), 110px);
+        right: -20px;
+      }
+    }
+  }
+}
+.section-title2 {
+  background: url(../img/pc/section-bg.png) no-repeat;
+  background-size: cover;
+  background-position: 0;
+  width: 100%;
+  height: 160px;
+  position: relative;
+  @media screen and (max-width : bp.$pc) {
+    height: clamp(80px, function.vw(160px, bp.$pc), 160px);
+  }
+  h2 {
+    text-align: center;
+    font-size: 65px;
+    color: yellow;
+    line-height: 70px;
+    padding-top: 10px;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(25px, function.vw(65px, bp.$pc), 65px);
+      line-height: clamp(30px, function.vw(70px, bp.$pc), 70px)
+    }
+  }
+  img {
+    display: block;
+    position: absolute;
+    top: -52px;
+    left: 20px;
+    width: 100px;
+    @media screen and (max-width : bp.$pc) {
+      width: clamp(40px, function.vw(100px, bp.$pc), 100px);
+      top: clamp(-52px, function.vw(-52px, bp.$pc), -21px);
+      left: 10px;
+    }
+  }
+}
+.section2-para {
+  width: 100%;
+  &__profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+    @media screen and (max-width : bp.$pc) {
+      display: inline-block;
+      // height: clamp(80px, function.vw(160px, bp.$pc), 160px);
+    }
+    .photo {
+      width: 35%;
+      @media screen and (max-width : bp.$pc) {
+        width: 100%;
+      }
+      .pic {
+        width: 100%;
+        img {
+          width: 100%;
+          object-fit: contain;
+        }
+        @media screen and (max-width : bp.$pc) {
+          text-align: center;
+          img {
+            width: clamp(200px, function.vw(400px, bp.$pc), 400px);
+          }
+        }
+      }
+      .name {
+        width: 180px;
+        margin: auto;
+        @media screen and (max-width : bp.$pc) {
+          width: clamp(120px, function.vw(200px, bp.$pc), 200px);
+        }
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .career {
+      width: 65%;
+      @media screen and (max-width : bp.$pc) {
+        width: 100%;
+      }
+      .career-title {
+        font-size: 35px;
+        font-weight: 800;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(22px, function.vw(35px, bp.$pc), 35px);
+          text-align: center;
+          margin-top: 30px;
+        }
+      }
+      .career-des {
+        font-size: 25px;
+        font-weight: 800;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(12px, function.vw(25px, bp.$pc), 25px);
+        }
+        tr {
+          display: flex;
+          th {
+            width: 350px;
+            padding-right: 20px;
+            @media screen and (max-width : bp.$pc) {
+              width: clamp(160px, function.vw(290px, bp.$pc), 290px);
+            }
+          }
+          td {
+            width: 100%;
+            .red {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__des {
+    p {
+      margin-left: auto;
+      margin-right: auto;
+      width: 80%;
+      padding-top: 70px;
+      font-size: 33px;
+      font-weight: 800;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(16px, function.vw(38px, bp.$pc), 38px);
+        padding-top: clamp(30px, function.vw(50px, bp.$pc), 50px);
+      }
+      .red {
+        color: red;
+      }
+      .large-red {
+        color: red;
+        font-size: 60px;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(20px, function.vw(60px, bp.$pc), 60px);
+        }
+      }
+    }
+    &__line-button {
+      position: relative;
+      margin-top: 30px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 100px;
+      width: 410px;
+      background-color: rgb(0, 189, 0);
+      color: white;
+      font-size: 35px;
+      border: 1px solid black;
+      border-radius: 42px;
+      height: 100px;
+      padding-top: 5px;
+      box-shadow: 8px 8px 5px rgb(173, 173, 173);
+      @media screen and (max-width : bp.$pc) {
+        width: 70%;
+        max-width: 300px;
+        height: 65px;
+        margin-bottom: 60px;
+      }
+      p {
+        height: 38px;
+        padding-top: 5px;
+        text-align: center;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(20px, function.vw(25px, bp.$pc), 25px);
+          padding-top: 0px;
+          height: 25px;
+        }
+      }
+      i {
+        font-size: 50px;
+        transform: rotate(-15deg);
+        position: absolute;
+        top: 65px;
+        right: 50px;
+        color: black;
+        @media screen and (max-width : bp.$pc) {
+          top: 45px;
+          font-size: 30px;
+        }
+      }
+    }
+    &__line-button:hover {
+      box-shadow: 5px 5px 5px black inset;
+      color: black;
+      cursor: pointer;
+    }
+  }
+}
+.section3-para {
+  width: 100%;
+  margin-bottom: 70px;
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 70px;
+    font-size: 33px;
+    font-weight: 800;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(16px, function.vw(38px, bp.$pc), 38px);
+      padding-top: clamp(30px, function.vw(50px, bp.$pc), 50px);
+    }
+    .red {
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+    .large-red {
+      color: red;
+      font-size: 50px;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(20px, function.vw(50px, bp.$pc), 50px);
+      }
+    }
+    .large-black {
+      font-size: 50px;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(20px, function.vw(50px, bp.$pc), 50px);
+      }
+    }
+    .green {
+      color: rgb(0, 189, 0);
+    }
+  }
+  .bg {
+    position: relative;
+    img {
+      position: absolute;
+      display: block;
+      top: 25px;
+      right: 0;
+      z-index: -1;
+      @media screen and (max-width : bp.$pc) {
+        width: clamp(150px, function.vw(300px, bp.$pc), 300px);
+        right: 20px;
+      }
+    }
+  }
+}
+.section-title3 {
+  background: url(../img/pc/section-bg.png) no-repeat;
+  background-size: cover;
+  background-position: 0;
+  width: 100%;
+  height: 110px;
+  position: relative;
+  @media screen and (max-width : bp.$pc) {
+    height: clamp(60px, function.vw(100px, bp.$pc), 100px);
+  }
+  h2 {
+    text-align: center;
+    font-size: 65px;
+    color: yellow;
+    line-height: 110px;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(25px, function.vw(65px, bp.$pc), 65px);
+      line-height: clamp(60px, function.vw(100px, bp.$pc), 100px)
+    }
+  }
+  .icon {
+    position: absolute;
+    top: -52px;
+    left: 20px;
+    width: 100px;
+    @media screen and (max-width : bp.$pc) {
+      width: clamp(40px, function.vw(100px, bp.$pc), 100px);
+      top: clamp(-52px, function.vw(-52px, bp.$pc), -21px);
+      left: 10px;
+    }
+  }
+  .icon2 {
+    position: absolute;
+    bottom: -70px;
+    right: 0px;
+    width: 180px;
+    border-radius: 100%;
+    @media screen and (max-width : bp.$pc) {
+      width: clamp(70px, function.vw(130px, bp.$pc), 130px);
+      bottom: -30px;
+      right: 2%;
+    }
+  }
+}
+.section4-para {
+  width: 100%;
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 70px;
+    font-size: 33px;
+    font-weight: 800;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(16px, function.vw(38px, bp.$pc), 38px);
+      padding-top: clamp(30px, function.vw(50px, bp.$pc), 50px);
+    }
+    .red {
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+    .large-red {
+      color: red;
+      font-size: 50px;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(20px, function.vw(50px, bp.$pc), 50px);
+      }
+    }
+  }
+  &__line-button {
+    position: relative;
+    margin-top: 80px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 100px;
+    width: 410px;
+    background-color: rgb(0, 189, 0);
+    color: white;
+    font-size: 35px;
+    border: 1px solid black;
+    border-radius: 42px;
+    height: 100px;
+    padding-top: 5px;
+    box-shadow: 8px 8px 5px rgb(173, 173, 173);
+    @media screen and (max-width : bp.$pc) {
+      margin-top: 40px;
+    }
+    @media screen and (max-width : bp.$pc) {
+      width: 70%;
+      max-width: 300px;
+      height: 65px;
+      margin-bottom: 60px;
+    }
+    p {
+      height: 38px;
+      padding-top: 5px;
+      text-align: center;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(20px, function.vw(25px, bp.$pc), 25px);
+        padding-top: 0px;
+        height: 25px;
+      }
+    }
+    i {
+      font-size: 50px;
+      transform: rotate(-15deg);
+      position: absolute;
+      top: 65px;
+      right: 50px;
+      color: black;
+      @media screen and (max-width : bp.$pc) {
+        top: 45px;
+        font-size: 30px;
+      }
+    }
+  }
+  &__line-button:hover {
+    box-shadow: 5px 5px 5px black inset;
+    color: black;
+    cursor: pointer;
+  }
+}
+.section5-para {
+  width: 100%;
+  p {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding-top: 70px;
+    font-size: 33px;
+    font-weight: 800;
+    @media screen and (max-width : bp.$pc) {
+      font-size: clamp(16px, function.vw(38px, bp.$pc), 38px);
+      padding-top: clamp(30px, function.vw(50px, bp.$pc), 50px);
+    }
+    .red {
+      color: red;
+    }
+    .blue {
+      color: blue;
+    }
+  }
+  .present-line1 {
+    margin-top: 25px;
+    img {
+      width: 100%;
+    }
+  }
+  &__present {
+    background: url(../img/pc/present.png) no-repeat;
+    background-size: contain;
+    width: 80%;
+    background-position: center;
+    height: 450px;
+    margin: auto;
+    @media screen and (max-width : bp.$pc) {
+      height: clamp(200px, function.vw(450px, bp.$pc), 450px);
+    }
+    &--line1 {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      .text {
+        position: absolute;
+        line-height: 70px;
+        top: 50px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        font-size: 50px;
+        display: inline-block;
+        background: linear-gradient(yellow 20%, #ff5e00);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(24px, function.vw(50px, bp.$pc), 50px);
+          line-height: clamp(24px, function.vw(50px, bp.$pc), 50px);
+          top: 30px;
+        }
+      }
+      .shadow {
+        line-height: 90px;
+        padding-top: 40px;
+        display: inline-block;
+        font-size: 50px;
+        text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), 0px 1px 0 rgb(0, 0, 0), 0-1px 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), 1px 0 0 rgb(0, 0, 0);
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(24px, function.vw(50px, bp.$pc), 50px);
+          padding-top: 30px;
+          line-height: clamp(24px, function.vw(50px, bp.$pc), 50px);
+        }
+      }
+    }
+    &--line2 {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      .text {
+        position: absolute;
+        line-height: 70px;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        width: 100%;
+        font-size: 50px;
+        display: inline-block;
+        background: linear-gradient(yellow 20%, #ff5e00);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        @media screen and (max-width : bp.$pc) {
+          font-size: clamp(24px, function.vw(50px, bp.$pc), 50px);
+          line-height: clamp(24px, function.vw(50px, bp.$pc), 50px);
+          top: 5px;
+        }
+      }
+      .shadow {
+        line-height: 70px;
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        transform: translate(-50%, 0);
+        display: inline-block;
+        font-size: 50px;
+        text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0), -1px 1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0), 0px 1px 0 rgb(0, 0, 0), 0-1px 0 rgb(0, 0, 0), -1px 0 0 rgb(0, 0, 0), 1px 0 0 rgb(0, 0, 0);
+          @media screen and (max-width : bp.$pc) {
+            font-size: clamp(24px, function.vw(50px, bp.$pc), 50px);
+            line-height: clamp(24px, function.vw(50px, bp.$pc), 50px);
+            top: 5px;
+          }
+      }
+    }
+    &--des {
+      padding-left: 30px;
+      margin-top: 90px;
+      @media screen and (max-width : bp.$pc) {
+        padding-left: clamp(20px, function.vw(30px, bp.$pc), 30px);
+        margin-top: clamp(40px, function.vw(90px, bp.$pc), 90px);
+      }
+      &1, &2, &3,&4 {
+        position: relative;
+      }
+      .text {
+          position: absolute;
+          bottom: 0px;
+          left: 50%;
+          transform: translate(-50%, 0);
+          width: 100%;
+          font-size: 30px;
+          display: inline-block;
+          background: linear-gradient(yellow 20%, #ff5e00);
+          background-clip: text;
+          -webkit-text-fill-color: transparent;
+          @media screen and (max-width : bp.$pc) {
+            font-size: clamp(12px, function.vw(30px, bp.$pc), 30px);
+          }
+        }
+        .shadow {
+          display: inline-block;
+          font-size: 30px;
+          text-shadow: 1px 1px 0 rgb(0, 0, 0), -1px -1px 0 rgb(0, 0, 0),
+            -1px 1px 0 rgb(0, 0, 0), 1px -1px 0 rgb(0, 0, 0),
+            0px 1px 0 rgb(0, 0, 0), 0-1px 0 rgb(0, 0, 0),
+            -1px 0 0 rgb(0, 0, 0), 1px 0 0 rgb(0, 0, 0);
+            @media screen and (max-width : bp.$pc) {
+              font-size: clamp(12px, function.vw(30px, bp.$pc), 30px);
+            }
+        }
+    }
+  }
+  .present-line2 {
+    img {
+      width: 100%;
+    }
+  }
+  &__hope {
+    background: url(../img/pc/handshake.png) no-repeat;
+    background-size: contain;
+    width: 90%;
+    background-position: center;
+    height: 450px;
+    margin: auto;
+    margin-top: 55px;
+    @media screen and (max-width : bp.$pc) {
+      height: clamp(300px, function.vw(650px, bp.$pc), 650px);
+      background-size: cover;
+      border-radius: clamp(40px, function.vw(70px, bp.$pc), 70px);
+    }
+    p {
+      padding-top: 30px;
+    }
+    img {
+      position: absolute;
+      display: block;
+      top: 25px;
+      right: 0;
+      z-index: -1;
+    }
+  }
+  &__line-button {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    width: 410px;
+    background-color: rgb(0, 189, 0);
+    color: white;
+    font-size: 35px;
+    border: 1px solid black;
+    border-radius: 42px;
+    height: 100px;
+    padding-top: 5px;
+    box-shadow: 8px 8px 5px rgb(173, 173, 173);
+    @media screen and (max-width : bp.$pc) {
+      width: 70%;
+      max-width: 300px;
+      height: 65px;
+      margin-bottom: 60px;
+    }
+    p {
+      height: 38px;
+      padding-top: 5px;
+      text-align: center;
+      @media screen and (max-width : bp.$pc) {
+        font-size: clamp(20px, function.vw(25px, bp.$pc), 25px);
+        padding-top: 0px;
+        height: 25px;
+      }
+    }
+    i {
+      font-size: 50px;
+      transform: rotate(-15deg);
+      position: absolute;
+      top: 65px;
+      right: 50px;
+      color: black;
+      @media screen and (max-width : bp.$pc) {
+        top: 45px;
+        font-size: 30px;
+      }
+    }
+  }
+  &__line-button:hover {
+    box-shadow: 5px 5px 5px black inset;
+    color: black;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,56 @@
+@use '../global/mixin/breakpoint' as bp;
+@use '../global/mixin/function' as function;
+
+.header{
+  font-size: 25px;
+  font-weight: 700;
+  width: 100%;
+  height: 676px;
+  margin: auto;
+  text-align: center;
+  color: white;
+  @media screen and (max-width : bp.$pc) {
+    font-size: 20px;
+    height: auto;
+  }
+  &__title{
+    width: 100%;
+    background: linear-gradient(rgb(255, 0, 0) 50%, rgb(255, 255, 255));
+    p {
+      height: 38px;
+      @media screen and (max-width : bp.$pc) {
+        height: clamp(95px, function.vw(38px, bp.$pc), 38px);
+      }
+      span {
+        color: rgb(255, 255, 0);
+        padding-left: -15px;
+      }
+    }
+  }
+  &__first-view {
+    position: relative;
+    img {
+      width: 100%;
+    }
+    .tr {
+      position: absolute;
+      display: block;
+      top: clamp(200px, function.vw(535px, bp.$pc), 535px);
+      left: 50%;
+
+      width: clamp(100px, function.vw(200px, bp.$pc), 200px);
+      @keyframes button {
+        0% {
+          transform: translate(-50%, 2px);
+        }
+        50% {
+          transform: translate(-50%, -2px);
+        }
+        100% {
+          transform: translate(-50%, 2px);
+        }
+      }
+      animation: 1.0s ease 0s infinite button;
+    }
+  }
+}

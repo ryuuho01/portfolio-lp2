@@ -1,0 +1,38 @@
+@use '../global/setting/font-family' as font;
+
+html,body,main{
+    width: 100%;
+    height: auto;
+}
+html{
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    font-size: 62.5%;
+    height: -webkit-fill-available;
+}
+@media screen and (max-width : 767px) {
+  html{
+    font-size: calc(10 * (100vw / 767));
+  }
+}
+
+body {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+    color: #111;
+    font-family: font.$Hiragino;
+}
+body.is-fixed{
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+main{
+    flex:1;
+}
